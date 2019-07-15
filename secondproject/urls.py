@@ -18,6 +18,10 @@ from django.urls import path, include
 import blog.views
 import portfolio.views
 
+# MEDIA 파일을 설정하기 위해 IMPORT 2가지
+from django.conf import settings 
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blog.views.home, name="home"),
@@ -25,4 +29,6 @@ urlpatterns = [
     path('blog/new', blog.views.new, name="new"),
     path('blog/create', blog.views.create, name='create'),
     path('portfolio/', portfolio.views.portfolio, name="portfolio"),
-]
+] 
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
