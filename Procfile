@@ -1,0 +1,1 @@
+web: gunicorn CLASSLION-Blog.wsgi --log-file -
