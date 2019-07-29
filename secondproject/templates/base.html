@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,8 +9,9 @@
         , initial-scale=1.0"
         />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>블로그</title>
+        <title>장터 블로그</title>
 
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link
         rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -35,7 +37,7 @@
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="{% url 'home' %}">장터</a>
         <button
             class="navbar-toggler"
             type="button"
@@ -50,14 +52,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}"
-                >Home <span class="sr-only">(current)</span></a
-                >
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'blogpost' %}">글쓰기</a>
-            </li>
+           
             <li class="nav-item dropdown">
                 <a
                 class="nav-link dropdown-toggle"
@@ -78,23 +73,10 @@
 
                 </div>
             </li>
-            <li class="nav-item">
-                <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Disabled</a
-                >
-            </li>
+            
             </ul>
             <form class="form-inline my-2 my-lg-0">
-            <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-            />
+
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
                 Search
             </button>

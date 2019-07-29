@@ -1,30 +1,12 @@
-{% extends 'base.html '%}
-
-  {% block contents %}
-    {% for blog in posts %}
-    <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{ blog.title }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ blog.pub_date }}</h6>
-          <p class="card-text">{{ blog.summery }}</p>
-          <a href="{% url 'detail' blog.id %}" class="card-link">...more</a>
-        </div>
-      </div>
+{% extends 'base.html '%} 
+{% load staticfiles %} 
+{% block contents %}
+  <div id="wrapper">
+    <h2>만물장터</h2>
+    <h4>사고 팔고 팔고 사고</h4>
+    <div class="menu">
+      <a class="box" href="{% url 'list' %}"><div>물건사기</div></a>
+      <a class="box" href="{% url 'sellitem' %}"><div>물건팔기</div></a>
     </div>
-    {% endfor %}
-    
-    {% if posts.has_previous%}
-    <a href="?page=1">First</a>
-    <a href="?page={{posts.previous_page_number}}">Previous</a>
-    {% endif %}
-    <span>{{posts.number}}</span>
-    <span>of</span>
-    <span>{{posts.paginator.num_pages}}</span>
-
-    {% if posts.has_next %}
-    <a href="?page={{posts.next_page_number}}">Next</a>
-    <a href="?page={{posts.paginator.num_pages}}">Last</a>
-    {% endif %}
-    
-  {% endblock %}
+  </div>
+{% endblock %}
