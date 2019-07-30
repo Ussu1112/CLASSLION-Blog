@@ -1,1 +1,1 @@
-web: gunicorn CLASSLION-Blog.wsgi --log-file -
+web: gunicorn SECONDPROJECT.wsgi --log-file -
