@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 python-3.7.1
+=======
+>>>>>>> 71a4c29f32577e1b7f64f3ca5267fc68f280ccf2
 dj-database-url==0.5.0
 Django==2.2.1
 django-cors-headers==3.0.1
